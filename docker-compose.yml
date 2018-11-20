@@ -14,12 +14,12 @@ services:
   json-server:
     image: cquan808/docker-json-server:latest
     ports:
-      - "5000:3000"
+      - "3000:3000"
     networks:
       - net
     configs:
       - source: json-file
-        target: json/db.json
+        target: json-server/json/db.json
     deploy:
       mode: replicated
       replicas: 1
