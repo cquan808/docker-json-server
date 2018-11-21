@@ -24,13 +24,8 @@ RUN npm install -g json-server &&\
 # Copy files
 COPY ./json-server/json/db.json /json-server/json/db.json
 
-# Change working directory
-#WORKDIR json-server/
-
 # Exposing port 3000 to the outside
-EXPOSE 3000
+#EXPOSE 3000
 
 # Start json-server on port 3000
-#ENTRYPOINT ["json-server", "--watch", "json-server/json/db.json"]
-CMD ["json-server", "--watch", "json-server/json/db.json"]
-#CMD ["bash"]
+CMD ["json-server", "--watch", "json-server/json/db.json", "-H", "0.0.0.0"]
